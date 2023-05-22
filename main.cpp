@@ -80,7 +80,6 @@ void InitProgram(){
 		cout << "SDL OpenGL window context created\n";
 	}
 	
-	
 	OpenGLContext = SDL_GL_CreateContext(window_application);
 	if(OpenGLContext == nullptr){
 		cout << "OpenGl context to window_application do not executed\n";
@@ -88,9 +87,7 @@ void InitProgram(){
 	} else{
 		cout << "OpenGL context created\n";
 	}
-	
-	
-	
+		
 	//iniciar o glad.
 	if(!gladLoadGLLoader(SDL_GL_GetProcAddress)){
 		cout << "glad cannot be initialized\n";
@@ -99,15 +96,14 @@ void InitProgram(){
 		cout << "glad init\n";
 	}
 	
-	
 	OpenglVersion();
-	
+
 }
 
 
 
 void Input(){
-	cout << "\ninput reading\n";
+	
 	SDL_Event event_queue;
 	while(SDL_PollEvent(&event_queue) != 0){
 		
@@ -116,36 +112,33 @@ void Input(){
 		}
 		
 	}
-	cout << "endind input reading\n";
+	
 }
 
 
 
 void PreDraw(){
-	cout << "\nPreDraw\n";
+	
 }
 
 
 void Draw(){
-	cout << "\nDraw\n";
+	
 }
 
 
 void MainLoop(){
 	
-	cout << "\nstart main loop\n";
-	
 	while(close_program !=true){
 		
 		Input();
-		PreDraw();
-		Draw();
+		//PreDraw();
+		//Draw();
 		
 		//atualiza a tela.
 		SDL_GL_SwapWindow(window_application);
 		
 	}
-	cout << "main loop killed\n";
 }
 
 
